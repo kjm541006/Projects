@@ -9,7 +9,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
+    <div class="modal hidden">
+      <div class="modal-background"></div>
+      <div class="modal-main">
+        <h2 class="modal-heading">Records</h2>
+        <div class="modal-content">
+          <ul class="modal-content-list"></ul>
+        </div>
+        <button class="modal-close">Close</button>
+      </div>
+    </div>
+    <header class="header">
       <h1>가위 바위 보</h1>
     </header>
     <main class="main">
@@ -18,23 +28,25 @@
         <div id="comp">comp</div>
         <div id="score"><span id="user-score">0</span>:<span id="comp-score">0</span></div>
       </div>
-      <div class="result">
-        <p>Paper covers rock. You Win!</p>
+      <div class="select">
+        <span id="user-select"></span>
+        <span id="comp-select"></span>
       </div>
       <div class="cases">
         <div id="r" class="case">
           <span>바위</span>
         </div>
-        <div id="s" class="case">
-          <span>가위</span>
-        </div>
         <div id="p" class="case">
           <span>보</span>
         </div>
+        <div id="s" class="case">
+          <span>가위</span>
+        </div>
       </div>
       <div id="message">
-        <span>선택하세요</span>
+        <span>위에서 선택하세요</span>
       </div>
+      <div id="record-btn">기록</div>
     </main>
     <script src="./app.js"></script>
   </body>
