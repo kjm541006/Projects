@@ -10,6 +10,8 @@ const modalBtn = document.getElementById("record-btn");
 const modal = document.querySelector(".modal");
 const modalBackground = document.querySelector(".modal-background");
 const closeModalBtn = document.querySelector(".modal-close");
+const recordList = document.querySelector(".modal-content-list");
+const isRecordExist = document.querySelector(".is-record-exist");
 
 let userScore = 0;
 let compScore = 0;
@@ -39,9 +41,12 @@ const compChoice = () => {
   return randomChoice;
 };
 
-const modalControl = () => {
+const modalHandler = () => {
   modal.classList.toggle("hidden");
-  record.forEach((x) => console.log(x));
+};
+
+const modalClose = () => {
+  modal.classList.add("hidden");
 };
 
 const userWin = (com, user) => {
@@ -105,6 +110,10 @@ const game = (user) => {
       draw(com, userChoice);
       break;
   }
+  isRecordExist.classList.add("hidden");
+  let records = document.createElement("li");
+  records.innerHTML = record.length > 0 ? record[record.length - 1] : "";
+  recordList.appendChild(records);
   console.log(record);
 };
 
@@ -112,13 +121,12 @@ const app = () => {
   const rockClicked = () => game("r");
   const scissorClicked = () => game("s");
   const paperClicked = () => game("p");
-
   rock.addEventListener("click", rockClicked);
   scissor.addEventListener("click", scissorClicked);
   paper.addEventListener("click", paperClicked);
-  modalBtn.addEventListener("click", modalControl);
-  closeModalBtn.addEventListener("click", modalControl);
-  modalBackground.addEventListener("click", modalControl);
+  modalBtn.addEventListener("click", modalHandler);
+  closeModalBtn.addEventListener("click", modalHandler);
+  modalBackground.addEventListener("click", modalHandler);
 };
 
 app();

@@ -12,11 +12,12 @@
     <div class="modal hidden">
       <div class="modal-background"></div>
       <div class="modal-main">
-        <h2 class="modal-heading">Records</h2>
+        <h2 class="modal-heading">기록</h2>
         <div class="modal-content">
-          <ul class="modal-content-list"></ul>
+          <div class="is-record-exist">기록이 없습니다</div>
+          <ol class="modal-content-list"></ol>
         </div>
-        <button class="modal-close">Close</button>
+        <button class="modal-close">닫기</button>
       </div>
     </div>
     <header class="header">
@@ -29,8 +30,8 @@
         <div id="score"><span id="user-score">0</span>:<span id="comp-score">0</span></div>
       </div>
       <div class="select">
-        <span id="user-select"></span>
-        <span id="comp-select"></span>
+        <div id="user-select">유저</div>
+        <div id="comp-select">컴퓨터</div>
       </div>
       <div class="cases">
         <div id="r" class="case">
